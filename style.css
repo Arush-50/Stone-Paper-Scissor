@@ -1,0 +1,150 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: black;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+
+img {
+    height: 100px;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: linear-gradient(45deg, rgb(5, 215, 211), rgb(0, 255, 4));
+    padding: 20px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    padding: 15px;
+    font-size: 20px;
+    color: white;
+}
+
+.headerChild {
+    display: flex;
+    align-items: center;
+}
+
+.items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.img-1,
+.img-2,
+.img-3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+button {
+    height: 50px;
+    width: 100%;
+    max-width: 200px;
+    border: none;
+    border-radius: 25px;
+    background-image: linear-gradient(var(--angle), rgb(207, 9, 184), rgb(0, 0, 225));
+    color: white;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    cursor: pointer;
+    scale: 1.05;
+    animation: animate 0.3s forwards;
+}
+
+button:active {
+    opacity: 0.7;
+}
+
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 45deg;
+    inherits: false;
+}
+
+@keyframes animate {
+    0% {
+        --angle: 45deg;
+    }
+
+    100% {
+        --angle: -90deg;
+    }
+}
+
+p {
+    color: white;
+    font-size: 18px;
+    text-align: center;
+}
+
+#player-chose,
+#computer-chose,
+#result,
+#played,
+#win,
+#lose,
+#draw {
+    padding: 0 5px;
+}
+
+.player,
+.com,
+.result {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 8px;
+}
+
+@media (max-width: 480px) {
+    .header {
+        font-size: 18px;
+        padding: 10px;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+
+    img {
+        height: 80px;
+    }
+
+    .items {
+        gap: 15px;
+    }
+
+    button {
+        font-size: 16px;
+        height: 45px;
+        max-width: 180px;
+    }
+
+    button:hover {
+        scale: 0.9;
+    }
+
+    p {
+        font-size: 16px;
+    }
+}
